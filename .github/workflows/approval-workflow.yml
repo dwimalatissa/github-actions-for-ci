@@ -5,12 +5,14 @@ jobs:
 
   labelWhenApproved:
 
+    name: Label when approved
+
     runs-on: ubuntu-latest
 
     steps:
-      - uses: label-when-approved-action
-      - name: label when approved
-        env:
+      - name: Label when approved
+        uses: label-when-approved-action
+          env:
           APPROVALS: "1"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ADD_LABEL: "APPROVALS MET"
